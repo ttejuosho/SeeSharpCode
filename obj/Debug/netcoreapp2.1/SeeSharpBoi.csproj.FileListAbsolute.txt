@@ -1,0 +1,11 @@
+/Users/taiwotejuosho/SeeSharpBoi/obj/Debug/netcoreapp2.1/SeeSharpBoi.csprojAssemblyReference.cache
+/Users/taiwotejuosho/SeeSharpBoi/obj/Debug/netcoreapp2.1/SeeSharpBoi.csproj.CoreCompileInputs.cache
+/Users/taiwotejuosho/SeeSharpBoi/obj/Debug/netcoreapp2.1/SeeSharpBoi.AssemblyInfoInputs.cache
+/Users/taiwotejuosho/SeeSharpBoi/obj/Debug/netcoreapp2.1/SeeSharpBoi.AssemblyInfo.cs
+/Users/taiwotejuosho/SeeSharpBoi/bin/Debug/netcoreapp2.1/SeeSharpBoi.deps.json
+/Users/taiwotejuosho/SeeSharpBoi/bin/Debug/netcoreapp2.1/SeeSharpBoi.runtimeconfig.json
+/Users/taiwotejuosho/SeeSharpBoi/bin/Debug/netcoreapp2.1/SeeSharpBoi.runtimeconfig.dev.json
+/Users/taiwotejuosho/SeeSharpBoi/bin/Debug/netcoreapp2.1/SeeSharpBoi.dll
+/Users/taiwotejuosho/SeeSharpBoi/bin/Debug/netcoreapp2.1/SeeSharpBoi.pdb
+/Users/taiwotejuosho/SeeSharpBoi/obj/Debug/netcoreapp2.1/SeeSharpBoi.dll
+/Users/taiwotejuosho/SeeSharpBoi/obj/Debug/netcoreapp2.1/SeeSharpBoi.pdb
