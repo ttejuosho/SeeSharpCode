@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SeeSharpBoi
 {
@@ -7,38 +9,37 @@ namespace SeeSharpBoi
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To The Console");
-            // Console.WriteLine("Username:");
-            // var username = Console.ReadLine();
-            // Console.WriteLine("Password:");
-            // var password = Console.ReadLine();
-            // if (username.ToLower() == "taiwo tejuosho" && password == "Aliyah422" ){
-            //     Console.WriteLine("Welcome Taiwo");
-            // } else {
-            //     Console.WriteLine("Welcome " + username);
-            // }
-            Console.WriteLine("Enter 3 Numbers");
-            string num1 = Console.ReadLine();
-            int num11;
-            int.TryParse(num1, out num11);
-            string num2 = Console.ReadLine();
-            int num21;
-            int.TryParse(num2, out num21);
-            string num3 = Console.ReadLine();
-            int num31;
-            int.TryParse(num3, out num31);
-            try
+            Console.WriteLine("Please use the options below");
+
+            Console.WriteLine("Enter 1 for GetAverage");
+
+            string action = Console.ReadLine();
+
+            if (action == "1")
             {
-            if (num11 == 0 || num21 == 0 || num31 == 0){
-                throw new Exception("Please Enter 3 Numbers");
-            } else {
-            int average = Numbers.GetAverage(num11, num21, num31);
-            Console.WriteLine("The Average of " + num1 + " " + num2 + " " + num3 + " is " + average);
-            }
-            }
-            catch(Exception ex){
-                Console.WriteLine(ex.Message);
-            Console.WriteLine("Enter 3 Numbers");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                Console.WriteLine("How many numbers will you be providing ?");
+                string numberOfItems = Console.ReadLine();
+                int.TryParse(numberOfItems, out int numItems);
+                List<float> averageList = new List<float>();
+
+                for (int i = 1; i <= numItems; i++)
+                {
+                    Console.WriteLine("Please enter number " + i);
+                    string currentNumber = Console.ReadLine();
+                    float.TryParse(currentNumber, out float currentNum);
+                    averageList.Add(currentNum);
+                }
+
+                try
+                {
+                    string average = Numbers.GetAverage(averageList);
+                    Console.WriteLine("Calculated Average is " + average);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    //Console.WriteLine("Enter 3 Numbers");
+                }
             }
         }
     }

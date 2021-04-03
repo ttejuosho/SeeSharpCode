@@ -1,12 +1,19 @@
 using System;
+using System.Collections.Generic;
 
 namespace SeeSharpBoi
 {
-    class Numbers{
-
-        public static int GetAverage(int num1, int num2, int num3){
-            int average = (num1 + num2 + num3)/3;
-            return average;
+    class Numbers
+    {
+        public static string GetAverage(List<float> numbers)
+        {
+            float total = 0;
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                total += numbers[i];
+            }
+            float average = total / numbers.Count;
+            return average.ToString("0.00");
         }
     }
 }
