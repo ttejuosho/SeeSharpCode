@@ -12,6 +12,7 @@ namespace SeeSharpBoi
             Console.WriteLine("Please use the options below");
 
             Console.WriteLine("Enter 1 for GetAverage");
+            Console.WriteLine("Enter 2 for GetFibonacciSeries");
 
             string action = Console.ReadLine();
 
@@ -40,6 +41,36 @@ namespace SeeSharpBoi
                     Console.WriteLine(ex.Message);
                     //Console.WriteLine("Enter 3 Numbers");
                 }
+            }
+
+            if (action == "2")
+            {
+                Console.WriteLine("Please enter the number of elements in the sequence");
+                string numberOfItems = Console.ReadLine();
+                int.TryParse(numberOfItems, out int numItems);
+
+                List<int> series = Numbers.GetFibonacciSeries(numItems);
+                string seriesString = "";
+
+                for (int i = 0; i < series.Count; i++)
+                {
+                    seriesString += series[i];
+
+                    if (i <= (series.Count - 2))
+                    {
+                        seriesString += ", ";
+                    }
+
+                    if (i == (series.Count - 1))
+                    {
+                        seriesString += ".";
+                    }
+                }
+                Console.WriteLine("================== RESULT =======================");
+                Console.WriteLine();
+                Console.WriteLine(seriesString);
+                Console.WriteLine();
+                Console.WriteLine("==================== END ========================");
             }
         }
     }
