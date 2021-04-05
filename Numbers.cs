@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace SeeSharpBoi
 {
@@ -40,18 +41,22 @@ namespace SeeSharpBoi
                 int counter = count - 3;
                 while (counter > 0)
                 {
-                    //Get number of elements in List
-                    //Get the last 2 elements
-                    //Add them up
-                    //insert into list
-                    //repeat COUNTER times with the updated list
-
                     int nextTerm = series.ElementAt(series.Count() - 1) + series.ElementAt(series.Count() - 2);
                     series.Add(nextTerm);
                     counter--;
                 }
             }
             return series;
+        }
+
+        public static float CurrencyConverter(string currency, float amount)
+        {
+            if (currency == "Dollar")
+            {
+                return amount * 460;
+            }
+
+            return amount / 460;
         }
     }
 }
