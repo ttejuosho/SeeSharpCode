@@ -14,6 +14,7 @@ namespace SeeSharpBoi
             Console.WriteLine("Enter 1 for GetAverage");
             Console.WriteLine("Enter 2 for GetFibonacciSeries");
             Console.WriteLine("Enter 3 for Currency Converter");
+            Console.WriteLine("Enter 4 for The Chase Assessment Solution Problem");
 
             string action = Console.ReadLine();
 
@@ -116,6 +117,53 @@ namespace SeeSharpBoi
                 }
                 Console.WriteLine();
                 Console.WriteLine("==================== END ========================");
+            }
+
+            if (action == "4")
+            {
+                //Assessment Problem
+                Console.WriteLine("Welcome To The AlgoSection.");
+                Console.WriteLine("I Accept a list of numbers in this format { 2,3,4,5,6 ; 7,8,9,3,2 }");
+                Console.WriteLine("Returns a sorted array with odd numbers first");
+                Console.WriteLine("Please enter the numbers");
+                string inputString = Console.ReadLine();
+                string[] inputStringArray = inputString.Split(";");
+
+                List<int> outputArrayEven = new List<int>();
+                List<int> outputArrayOdd = new List<int>();
+                string[] oneArray = inputStringArray[0].Split(",");
+                string[] twoArray = inputStringArray[1].Split(",");
+
+                foreach (var item in oneArray)
+                {
+                    int.TryParse(item.ToString(), out int itemInt);
+                    if (itemInt % 2 == 0)
+                    {
+                        outputArrayEven.Add(itemInt);
+                    }
+                    else
+                    {
+                        outputArrayOdd.Add(itemInt);
+                    }
+                }
+
+                foreach (var item in twoArray)
+                {
+                    int.TryParse(item.ToString(), out int itemInt);
+                    if (itemInt % 2 == 0)
+                    {
+                        outputArrayEven.Add(itemInt);
+                    }
+                    else
+                    {
+                        outputArrayOdd.Add(itemInt);
+                    }
+                }
+                outputArrayEven.Sort();
+                outputArrayOdd.Sort();
+
+                outputArrayOdd.AddRange(outputArrayEven);
+                Console.WriteLine(string.Join(",", outputArrayOdd));
             }
         }
     }
