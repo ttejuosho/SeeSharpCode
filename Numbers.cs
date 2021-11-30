@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace SeeSharpBoi
 {
-    class Numbers
+    public class Numbers
     {
         public static string GetAverage(List<float> numbers)
         {

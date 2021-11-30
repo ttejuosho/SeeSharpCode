@@ -15,6 +15,7 @@ namespace SeeSharpBoi
             Console.WriteLine("Enter 2 for GetFibonacciSeries");
             Console.WriteLine("Enter 3 for Currency Converter");
             Console.WriteLine("Enter 4 for The Chase Assessment Solution Problem");
+            Console.WriteLine("Enter 5 for Character Counter");
 
             string action = Console.ReadLine();
 
@@ -35,6 +36,7 @@ namespace SeeSharpBoi
 
                 try
                 {
+                    DATE timer = new DATE();
                     string average = Numbers.GetAverage(averageList);
                     Console.WriteLine("Calculated Average is " + average);
                 }
@@ -165,6 +167,168 @@ namespace SeeSharpBoi
                 outputArrayOdd.AddRange(outputArrayEven);
                 Console.WriteLine(string.Join(",", outputArrayOdd));
             }
+
+            if (action == "5")
+            {
+                Console.WriteLine("Welcome To Character Count.");
+                Console.WriteLine("Please Enter a String");
+                string inputString = Console.ReadLine();
+                Dictionary<char, int> characterCount = new Dictionary<char, int>();
+                foreach(var character in inputString){
+                    if (character != ' '){ 
+                        if (!characterCount.ContainsKey(character)){
+                            characterCount.Add(character, 1);
+                        } else {
+                            characterCount[character]++;
+                        }
+                    }
+                }
+
+                characterCount.ToList().ForEach(x => Console.WriteLine(x.Key));
+
+            }
+        }
+
+        static int ReturnMajorityElement(int[] intArray)
+        {
+            Dictionary<int, int> tracker = new Dictionary<int, int>();
+
+            foreach ( int i in intArray )
+            {
+                if (!tracker.ContainsKey(i))
+                    tracker.Add(i, 1);
+                else
+                    tracker[i]++;
+            }
+
+            foreach (var (key, value) in tracker)
+            {
+                Console.WriteLine(key + " - " + value);
+            }
+
+            return tracker.FirstOrDefault(x => x.Value == 5).Key;
+        }
+
+        static int GetFibonacciSeriesSum(int n)
+        {
+            int result = 0;
+            int firstNumber = 0;
+            int secondNumber = 1;
+            if (n == 0)
+                return 0;
+            if (n == 1)
+                return 1;
+            
+            while( n >= 1 )
+            {
+                result = firstNumber + secondNumber;
+                firstNumber = secondNumber;
+                secondNumber = result;
+                n--;
+            }
+
+            return result;
+        }
+
+        static string ReverseArray(int[] intArray)
+        {
+            string reversedArray = string.Empty;
+            for(int i = intArray.Length - 1; i >= 0; i--)
+            {
+                reversedArray += intArray[i].ToString();
+            }
+
+            return reversedArray;
+        }
+
+        static string RemoveDuplicates(string inputString)
+        {
+            string table = "";
+            string result = "";
+            foreach(char value in inputString)
+            {
+                if(table.IndexOf(value) == -1)
+                {
+                    table += value;
+                    result += value;
+                }
+            }
+            return result;
+        }
+
+        static bool TwoIntegersToSumBF(int[] intArray, int targetSum)
+        {
+            for(int i = 0; i < intArray.Length; i++)
+            {
+                for (int j = 0; j < intArray.Length; j++)
+                {
+                    if(i != j)
+                    {
+                        int sum = intArray[i] + intArray[j];
+                        if (sum == targetSum)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        
+        static bool TwoIntegersToSum(int[] intArray, int targetSum)
+        {
+            Array.Sort(intArray);
+            int i = 0;
+            int j = intArray.Length - 1;
+            while(i < j)
+            {
+                int sum = intArray[i] + intArray[j];
+                if (sum < targetSum)
+                    i++;
+                else if (sum > targetSum)
+                    j--;
+                else
+                    return true;
+            }
+
+            return false;
+        }
+
+        static List<string> VerticalizeString (string inputString){
+            List<string> outputArray = new List<string>();
+            List<string> inputStringArray = inputString.ToList();
+
+            int outputArrayLength = getMaxLength(inputStringArray);
+            
+            for( var i = 0; i < outputArrayLength; i++ )
+            {
+                if (!inputStringArray[i] || !inputStringArray[i][i])
+                {
+                    continue;
+                }
+                for (var j = 0; j < outputStringArray; j++)
+                {
+                    if (!String.IsNullOrEmpty(outputArray[j]))
+                    {
+                        outputArray[j] = "";
+                    }
+                    outputArray[j] +=
+        String.IsNullOrEmpty(inputStringArray[i][j]) == true ? " " : inputStringArray[i][j];
+                }
+            }
+            Console.WriteLine(outputArray.ToString());
+            return outputArray;
+        }
+
+        static int getMaxLength(List<string> inputStringList){
+            int result = 0;
+            for ( int i = 0; i < inputStringList.Count; i++){
+                int temp = inputStringList[i].Length;
+                if(temp > result){
+                    result = temp;
+                }
+            }
+            return result;
         }
     }
 }

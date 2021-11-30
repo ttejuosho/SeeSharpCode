@@ -3,10 +3,12 @@
 /Users/taiwotejuosho/Documents/dev/SeeSharpCode/bin/Debug/netcoreapp3.1/SeeSharpBoi.runtimeconfig.dev.json
 /Users/taiwotejuosho/Documents/dev/SeeSharpCode/bin/Debug/netcoreapp3.1/SeeSharpBoi.dll
 /Users/taiwotejuosho/Documents/dev/SeeSharpCode/bin/Debug/netcoreapp3.1/SeeSharpBoi.pdb
-/Users/taiwotejuosho/Documents/dev/SeeSharpCode/obj/Debug/netcoreapp3.1/SeeSharpBoi.csprojAssemblyReference.cache
 /Users/taiwotejuosho/Documents/dev/SeeSharpCode/obj/Debug/netcoreapp3.1/SeeSharpBoi.AssemblyInfoInputs.cache
 /Users/taiwotejuosho/Documents/dev/SeeSharpCode/obj/Debug/netcoreapp3.1/SeeSharpBoi.AssemblyInfo.cs
 /Users/taiwotejuosho/Documents/dev/SeeSharpCode/obj/Debug/netcoreapp3.1/SeeSharpBoi.csproj.CoreCompileInputs.cache
 /Users/taiwotejuosho/Documents/dev/SeeSharpCode/obj/Debug/netcoreapp3.1/SeeSharpBoi.dll
 /Users/taiwotejuosho/Documents/dev/SeeSharpCode/obj/Debug/netcoreapp3.1/SeeSharpBoi.pdb
 /Users/taiwotejuosho/Documents/dev/SeeSharpCode/obj/Debug/netcoreapp3.1/SeeSharpBoi.genruntimeconfig.cache
+/Users/taiwotejuosho/Documents/dev/SeeSharpCode/obj/Debug/netcoreapp3.1/SeeSharpBoi.csproj.AssemblyReference.cache
+/Users/taiwotejuosho/Documents/dev/SeeSharpCode/obj/Debug/netcoreapp3.1/SeeSharpBoi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/taiwotejuosho/Documents/dev/SeeSharpCode/bin/Debug/netcoreapp3.1/SeeSharpBoi
