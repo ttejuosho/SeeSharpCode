@@ -36,7 +36,7 @@ namespace SeeSharpBoi
 
                 try
                 {
-                    DATE timer = new DATE();
+                    //DateTime timer = new DateTime();
                     string average = Numbers.GetAverage(averageList);
                     Console.WriteLine("Calculated Average is " + average);
                 }
@@ -296,24 +296,24 @@ namespace SeeSharpBoi
 
         static List<string> VerticalizeString (string inputString){
             List<string> outputArray = new List<string>();
-            List<string> inputStringArray = inputString.ToList();
+            List<string> inputStringArray = new List<string> { inputString };
 
             int outputArrayLength = getMaxLength(inputStringArray);
             
             for( var i = 0; i < outputArrayLength; i++ )
             {
-                if (!inputStringArray[i] || !inputStringArray[i][i])
+                if (!string.IsNullOrEmpty(inputStringArray[i]) || char.IsLetter(inputStringArray[i][i]))
                 {
                     continue;
                 }
-                for (var j = 0; j < outputStringArray; j++)
+                for (var j = 0; j < outputArray.Count ; j++)
                 {
                     if (!String.IsNullOrEmpty(outputArray[j]))
                     {
                         outputArray[j] = "";
                     }
                     outputArray[j] +=
-        String.IsNullOrEmpty(inputStringArray[i][j]) == true ? " " : inputStringArray[i][j];
+        char.IsLetter(inputStringArray[i][j]) == true ? " " : inputStringArray[i][j];
                 }
             }
             Console.WriteLine(outputArray.ToString());
