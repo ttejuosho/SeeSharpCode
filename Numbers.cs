@@ -53,10 +53,10 @@ namespace SeeSharpBoi
         {
             if (currency == "Dollar")
             {
-                return amount * 460;
+                return amount * 560;
             }
 
-            return amount / 460;
+            return amount / 560;
         }
     }
 }
