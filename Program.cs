@@ -108,7 +108,7 @@ namespace SeeSharpBoi
                 Console.WriteLine();
                 Console.WriteLine("================== RESULT =======================");
                 Console.WriteLine();
-                Console.WriteLine("Rate used N460 to $1");
+                Console.WriteLine("Rate used N560 to $1");
                 if (currencyOption == "1")
                 {
                     Console.WriteLine(dollarSign + amount.ToString("#,##0") + " is " + nairaSign + result.ToString("#,##0.00") + " in Naira");
