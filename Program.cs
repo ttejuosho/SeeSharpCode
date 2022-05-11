@@ -16,6 +16,7 @@ namespace SeeSharpBoi
             Console.WriteLine("Enter 3 for Currency Converter");
             Console.WriteLine("Enter 4 for The Chase Assessment Solution Problem");
             Console.WriteLine("Enter 5 for Character Counter");
+            Console.WriteLine("Enter 6 for DotAny Test");
 
             string action = Console.ReadLine();
 
@@ -184,8 +185,19 @@ namespace SeeSharpBoi
                     }
                 }
 
-                characterCount.ToList().ForEach(x => Console.WriteLine(x.Key));
+                characterCount.ToList().ForEach(x => Console.WriteLine(x.Key + "--" + x.Value));
+            }
 
+            if (action == "6")
+            {
+                List<Person> people = new List<Person>
+                {
+                    new Person{ PersonId = 1, Name = "Edwin Hojnacki", Bio = new List<string>{ Gender.MALE.ToString() , Race.WHITE.ToString() } },
+                    new Person{ PersonId = 2, Name = "Gomez Saldana", Bio = new List<string>() },
+                    new Person{ PersonId = 3, Name = "Ali Mohammed", Bio = new List<string>{ Gender.MALE.ToString() , Race.WHITE.ToString() } }
+                };
+
+                Console.WriteLine(people.Find(p => !p.Bio.Any()).Name); //Returns Name of the first Person with no Bio Info
             }
         }
 
