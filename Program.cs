@@ -18,6 +18,23 @@ namespace SeeSharpBoi
             Console.WriteLine("Enter 5 for Character Counter");
             Console.WriteLine("Enter 6 for DotAny Test");
 
+            List<Person> people = new List<Person>();
+
+            if (!people.Any(c => c.Name == "Aliko Dangote"))
+            {
+                people.Add(new Person
+                {
+                    Name = "Aliko Dangote",
+                    PersonId = 43,
+                    Bio = new List<string> { "Race", "Black" }
+                });
+
+                Console.WriteLine(people.Count());
+            }
+
+
+
+
             string action = Console.ReadLine();
 
             if (action == "1")
@@ -175,11 +192,16 @@ namespace SeeSharpBoi
                 Console.WriteLine("Please Enter a String");
                 string inputString = Console.ReadLine();
                 Dictionary<char, int> characterCount = new Dictionary<char, int>();
-                foreach(var character in inputString){
-                    if (character != ' '){ 
-                        if (!characterCount.ContainsKey(character)){
+                foreach (var character in inputString)
+                {
+                    if (character != ' ')
+                    {
+                        if (!characterCount.ContainsKey(character))
+                        {
                             characterCount.Add(character, 1);
-                        } else {
+                        }
+                        else
+                        {
                             characterCount[character]++;
                         }
                     }
@@ -190,14 +212,15 @@ namespace SeeSharpBoi
 
             if (action == "6")
             {
-                List<Person> people = new List<Person>
-                {
-                    new Person{ PersonId = 1, Name = "Edwin Hojnacki", Bio = new List<string>{ Gender.MALE.ToString() , Race.WHITE.ToString() } },
-                    new Person{ PersonId = 2, Name = "Gomez Saldana", Bio = new List<string>() },
-                    new Person{ PersonId = 3, Name = "Ali Mohammed", Bio = new List<string>{ Gender.MALE.ToString() , Race.WHITE.ToString() } }
-                };
+                List<Person> peoplee = new List<Person>();
 
-                Console.WriteLine(people.Find(p => !p.Bio.Any()).Name); //Returns Name of the first Person with no Bio Info
+                if (peoplee.Find(p => !p.Bio.Any()).Name == "Aliko Dangote")
+                {
+                    Console.WriteLine("Aliyu Babangida 404");
+                }
+
+
+                Console.WriteLine(people.Find(p => !p.Bio.Any()).Name == "Aliko Dangote"); //Returns Name of the first Person with no Bio Info
             }
         }
 
@@ -205,7 +228,7 @@ namespace SeeSharpBoi
         {
             Dictionary<int, int> tracker = new Dictionary<int, int>();
 
-            foreach ( int i in intArray )
+            foreach (int i in intArray)
             {
                 if (!tracker.ContainsKey(i))
                     tracker.Add(i, 1);
@@ -230,8 +253,8 @@ namespace SeeSharpBoi
                 return 0;
             if (n == 1)
                 return 1;
-            
-            while( n >= 1 )
+
+            while (n >= 1)
             {
                 result = firstNumber + secondNumber;
                 firstNumber = secondNumber;
@@ -245,7 +268,7 @@ namespace SeeSharpBoi
         static string ReverseArray(int[] intArray)
         {
             string reversedArray = string.Empty;
-            for(int i = intArray.Length - 1; i >= 0; i--)
+            for (int i = intArray.Length - 1; i >= 0; i--)
             {
                 reversedArray += intArray[i].ToString();
             }
@@ -257,9 +280,9 @@ namespace SeeSharpBoi
         {
             string table = "";
             string result = "";
-            foreach(char value in inputString)
+            foreach (char value in inputString)
             {
-                if(table.IndexOf(value) == -1)
+                if (table.IndexOf(value) == -1)
                 {
                     table += value;
                     result += value;
@@ -270,11 +293,11 @@ namespace SeeSharpBoi
 
         static bool TwoIntegersToSumBF(int[] intArray, int targetSum)
         {
-            for(int i = 0; i < intArray.Length; i++)
+            for (int i = 0; i < intArray.Length; i++)
             {
                 for (int j = 0; j < intArray.Length; j++)
                 {
-                    if(i != j)
+                    if (i != j)
                     {
                         int sum = intArray[i] + intArray[j];
                         if (sum == targetSum)
@@ -286,13 +309,13 @@ namespace SeeSharpBoi
             }
             return false;
         }
-        
+
         static bool TwoIntegersToSum(int[] intArray, int targetSum)
         {
             Array.Sort(intArray);
             int i = 0;
             int j = intArray.Length - 1;
-            while(i < j)
+            while (i < j)
             {
                 int sum = intArray[i] + intArray[j];
                 if (sum < targetSum)
@@ -306,19 +329,20 @@ namespace SeeSharpBoi
             return false;
         }
 
-        static List<string> VerticalizeString (string inputString){
+        static List<string> VerticalizeString(string inputString)
+        {
             List<string> outputArray = new List<string>();
             List<string> inputStringArray = new List<string> { inputString };
 
             int outputArrayLength = getMaxLength(inputStringArray);
-            
-            for( var i = 0; i < outputArrayLength; i++ )
+
+            for (var i = 0; i < outputArrayLength; i++)
             {
                 if (!string.IsNullOrEmpty(inputStringArray[i]) || char.IsLetter(inputStringArray[i][i]))
                 {
                     continue;
                 }
-                for (var j = 0; j < outputArray.Count ; j++)
+                for (var j = 0; j < outputArray.Count; j++)
                 {
                     if (!String.IsNullOrEmpty(outputArray[j]))
                     {
@@ -332,11 +356,14 @@ namespace SeeSharpBoi
             return outputArray;
         }
 
-        static int getMaxLength(List<string> inputStringList){
+        static int getMaxLength(List<string> inputStringList)
+        {
             int result = 0;
-            for ( int i = 0; i < inputStringList.Count; i++){
+            for (int i = 0; i < inputStringList.Count; i++)
+            {
                 int temp = inputStringList[i].Length;
-                if(temp > result){
+                if (temp > result)
+                {
                     result = temp;
                 }
             }
